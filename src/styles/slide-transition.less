@@ -1,0 +1,19 @@
+.slide-enter-active {
+  transition-duration: 0.7s;
+  transition-timing-function: ease-in;
+}
+
+.slide-leave-active {
+  transition-duration: 0.7s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.slide-enter-to, .slide-leave-from {
+  max-height: 10000px;
+  overflow: hidden;
+}
+
+.slide-enter-from, .slide-leave-to {
+  overflow: hidden;
+  max-height: 0;
+}

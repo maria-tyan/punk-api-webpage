@@ -1,21 +1,24 @@
 <template>
-  <div class="hello">
+  <div class="">
     <h1>Punk API WebPage</h1>
     <div v-for="(beer, i) in beersList" :key="i">
-      <img :src="beer.image_url" :alt="beer.name" />
-      {{ beer.name }}
+      <BasicAccordion :beerData="beer"/>
     </div>
   </div>
 </template>
 
 <script>
 import fetchData from '../mixins/fetchData';
+import BasicAccordion from './BasicAccordion.vue';
 
 export default {
   name: 'BeerList',
   mixins: [
     fetchData,
   ],
+  components: {
+    BasicAccordion,
+  },
   props: {
     msg: String,
   },
