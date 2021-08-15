@@ -1,14 +1,16 @@
 <template>
-  <div>
+  <div class="page-wrapper">
     <h1>Punk API WebPage</h1>
-    <select @change="onSort($event)">
-      <option
-        v-for="(item, id) in sortOptions"
-        :key="id"
-        :value="id">
-        {{ item.label }}
-      </option>
-    </select>
+    <div class="select">
+      <select @change="onSort($event)">
+        <option
+          v-for="(item, id) in sortOptions"
+          :key="id"
+          :value="id">
+          {{ item.label }}
+        </option>
+      </select>
+    </div>
     <div class="list-wrapper">
       <BasicAccordion
         v-for="(beer, i) in beersList"
@@ -76,9 +78,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-.list-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
+@import "../styles/wrappers.less";
+@import "../styles/select.less";
 </style>
