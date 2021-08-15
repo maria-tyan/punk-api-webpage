@@ -2,7 +2,7 @@
   <div class="basic-accordion">
     <button
       @click="toogleItem"
-      :data-state="isShow ? '+' : '-'"
+      :data-state="isShow ? '-' : '+'"
       class="basic-accordion__btn">
       {{ beerData.name }}
     </button>
