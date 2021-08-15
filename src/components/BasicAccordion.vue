@@ -1,12 +1,11 @@
 <template>
   <div class="basic-accordion">
-    <div
-      @click="isShow = !isShow"
-      class="basic-accordion__title">
-      <h2>
-        {{ beerData.name }}
-      </h2>
-    </div>
+    <button
+      @click="toogleItem"
+      :data-state="isShow ? '+' : '-'"
+      class="basic-accordion__btn">
+      {{ beerData.name }}
+    </button>
     <transition name="slide">
       <div
         v-if="isShow"
@@ -18,12 +17,20 @@
             class="basic-accordion__img"
           />
         </div>
-        <div class="basic-accordion__description">
-          <h3>
+        <div class="basic-accordion__text">
+          <h3 class="basic-accordion__tagline">
             {{ beerData.tagline }}
           </h3>
-          <p>
+          <p class="basic-accordion__description">
             {{ beerData.description }}
+          </p>
+          <p class="basic-accordion__description">
+            <b>Date first brewed:</b>
+            {{ beerData.first_brewed }}
+          </p>
+          <p class="basic-accordion__description">
+            <b>Alcohol by Volume:</b>
+            {{ beerData.abv }}
           </p>
         </div>
       </div>
@@ -45,6 +52,11 @@ export default {
     return {
       isShow: false,
     };
+  },
+  methods: {
+    toogleItem() {
+      this.isShow = !this.isShow;
+    },
   },
 };
 </script>
