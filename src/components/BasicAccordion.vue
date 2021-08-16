@@ -6,14 +6,6 @@
       class="basic-accordion__btn">
       {{ beerData.name }}
     </button>
-    <div
-      v-if="isShow"
-      id="accordion-content"
-      class="basic-accordion__content">
-      <h3 class="basic-accordion__tagline">
-        {{ beerData.tagline }}
-      </h3>
-    </div>
     <transition name="slide">
       <div
         v-if="isShow"

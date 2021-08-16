@@ -3,6 +3,9 @@
     <h1>Punk API WebPage</h1>
     <div class="select">
       <select @change="onSort($event)">
+        <option disabled selected value>
+          -- select an option --
+        </option>
         <option
           v-for="(item, id) in sortOptions"
           :key="id"
@@ -13,9 +16,9 @@
     </div>
     <div class="list-wrapper">
       <BasicAccordion
-        v-for="(beer, i) in beersList"
-        :key="i"
-        :beerData="beer"/>
+        v-for="beer in beersList"
+        :key="beer.id"
+        :beerData="beer" />
     </div>
   </div>
 </template>
@@ -78,6 +81,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import "../styles/wrappers.less";
-@import "../styles/select.less";
+  @import "../styles/wrappers.less";
+  @import "../styles/select.less";
 </style>
